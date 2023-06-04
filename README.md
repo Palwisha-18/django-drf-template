@@ -1,4 +1,4 @@
-# Django DRF Dockerized Project Template
+# Django (DRF) Dockerized Project Template
 
 This repository serves as a template for creating a Django REST Framework (DRF) project that is containerized using Docker. It provides a structured starting point for developing Django-based web applications with a RESTful API, allowing for easier setup and deployment.
 
@@ -27,22 +27,23 @@ To start a new project using this template, follow these steps:
 1. Clone this repository to your local machine:
 
 ```bash
-git clone https://github.com/your-username/your-project.git
+git clone https://github.com/Palwisha-18/django-drf-template.git
 ```
 
-2. Navigate into the cloned directory:
+2. Navigate into the `django_project` directory:
 
 ```bash
-cd your-project
+cd django-drf-template
+cd django_project
 ```
 
-3. Create a new Django secret key:
+3. Set environment variables:
 
 ```bash
 cp .env.example .env
 ```
 
-Open the `.env` file and replace the value of `SECRET_KEY` with a randomly generated secret key.
+Open the `.env` file and set the value of all environment variables.
 
 4. Build and run the Docker containers:
 
@@ -54,17 +55,22 @@ This command will download the required Docker images, set up the containers, an
 
 5. Access the Django application:
 
-You can access the Django application running on `localhost:8000` in your web browser.
+You can access the Django application running on `127.0.0.1:8000` in your web browser.
 
 6. Test the API endpoint:
 
-A sample API endpoint is available at `localhost:8000/api/`. You can modify or extend it according to your project's requirements.
+A sample API endpoint is available at `127.0.0.1:8000/api/app1/home`. You can modify or extend it according to your project's requirements.
+
+## Using this template
+- Rename `django_project` folder according to the name of your django project and replace its usage in the project.
+- Rename `app1` to represent the application name in your django project. Similarly, replace its usage in the project.
+- You can add more apps under api directory. For each app added, add app name to `INSTALLED_APPS` in `config/settings/base.py` and add app urls to `api/urls.py`
 
 ## Configuration
 
 - **Django Settings**: The project-specific Django settings are located in the `config/settings/` directory. You can modify these files to adjust the project's configuration based on your needs.
 
-- **Database**: By default, this template uses PostgreSQL as the database backend. You can update the database settings in the `.env` file to match your requirements.
+- **Database**: By default, this template uses PostgreSQL as the database backend. You can update the database settings in the `docker-compose.yml` and `config/settings/base.py`
 
 - **Docker Configuration**: The Docker configuration files (`Dockerfile` and `docker-compose.yml`) are included in the root directory. If you need to make changes to the container setup or add additional services, you can modify these files accordingly.
 
