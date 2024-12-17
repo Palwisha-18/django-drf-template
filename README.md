@@ -40,7 +40,7 @@ cd django_project
 3. Set environment variables:
 
 ```bash
-cp .env.example .env
+cp .env.sample .env
 ```
 
 Open the `.env` file and set the value of all environment variables.
